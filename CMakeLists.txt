@@ -2,16 +2,28 @@ cmake_minimum_required(VERSION 3.0)
 
 project(cxx_demo)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED true)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY output)
 # https://cmake.org/cmake/help/latest/prop_tgt/RUNTIME_OUTPUT_DIRECTORY.html
 
+# Setup Boost
+if(WIN32)
+    set(BOOST_ROOT "c:/apps/boost/devel")
+    set(BOOST_LIBRARYDIR "c:/apps/boost/devel/lib")
+    set(BOOST_INCLUDEDIR "c:/apps/boost/devel/include")
+endif()
+find_package(Boost 1.76.0 COMPONENTS program_options)
+if(Boost_FOUND)
+    message("Find Boost")
+endif()
+# END: Setup Boost
 
+include_directories(${Boost_INCLUDE_DIRS})
 include_directories(include)
 
 add_executable(greet src/greet.cpp)
 add_executable(vector_demo src/vector_demo.cpp)
 add_executable(map_demo src/map_demo.cpp)
-# add_executable(boost_bind_demo src/boost_bind_demo.cpp)
+add_executable(boost_bind_demo src/boost_bind_demo.cpp)
 target_compile_features(vector_demo PRIVATE cxx_long_long_type)
