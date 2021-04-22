@@ -16,6 +16,6 @@ How to use?
 
 1. Create and enter a build directory: `mkdir build && cd build`
 2. Invoke cmake: `cmake ..` on Linux, `cmake .. -G "MinGW Makefiles"` on Windows
-3. Build: `make` on Linux, `mingw32-make` on Windows
+3. Build: `make` on Linux, `mingw32-make` on Windows, or simply `cmake --build .`
 
 Useful link: https://theboostcpplibraries.com/
