@@ -1,8 +1,10 @@
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include <vector>
 #include <algorithm>
 #include <iostream>
 #include <string>
+
+using namespace boost::placeholders;
 
 int f(int x, int y)
 {
