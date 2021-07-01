@@ -1,6 +1,7 @@
-#include<iostream>
-#include<vector>
 #include<algorithm>
+#include<iostream>
+#include<span>
+#include<vector>
 
 using namespace std;
 
@@ -51,6 +52,15 @@ int main(int argc, char** argv)
 
     cout << "Size of long long int " << sizeof(long long int) << endl;
     cout << "Size of int " << sizeof(int) << endl;
+
+    cout << "Using span: " << endl;
+
+    span data_span{data};
+    for(auto&& d: data_span)
+    {
+        cout<<d<<"\t";
+    }
+    cout<<endl;
 
     return 0;
 }

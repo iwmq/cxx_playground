@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 
 project(cxx_demo)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED true)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY output)
 # https://cmake.org/cmake/help/latest/prop_tgt/RUNTIME_OUTPUT_DIRECTORY.html
