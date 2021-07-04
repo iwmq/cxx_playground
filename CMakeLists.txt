@@ -30,14 +30,19 @@ endif()
 include_directories(${Boost_INCLUDE_DIRS})
 include_directories(include)
 
-add_executable(smart_pointers_demo src/smart_pointers_demo.cpp)
 add_executable(greet src/greet.cpp)
+
 add_executable(vector_demo src/vector_demo.cpp)
 add_executable(map_demo src/map_demo.cpp)
+
 add_executable(boost_bind_demo src/boost_bind_demo.cpp)
 add_executable(std_bind_demo src/std_bind_demo.cpp)
+
 add_executable(thread_demo src/thread_demo.cpp)
 add_executable(jthread_demo src/jthread_demo.cpp)
+add_executable(mutex_demo src/mutex_demo.cpp)
+
+add_executable(smart_pointers_demo src/smart_pointers_demo.cpp)
 add_executable(double_pointer_demo
     src/double_pointer_demo.c
     src/pointer_utilities.c
