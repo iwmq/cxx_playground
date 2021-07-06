@@ -27,8 +27,11 @@ if(Boost_FOUND)
 endif()
 # END: Setup Boost
 
-include_directories(${Boost_INCLUDE_DIRS})
-include_directories(include)
+include_directories(
+    ${Boost_INCLUDE_DIRS}
+    include()
+)
+# include_directories(include)
 
 add_executable(greet src/greet.cpp)
 
@@ -65,3 +68,5 @@ target_compile_options(vector_demo PRIVATE
 #     # lots of warnings and all warnings as errors
 #     add_compile_options(-Wall -Wextra -pedantic -Werror)
 # endif()
+
+add_subdirectory(asio)
