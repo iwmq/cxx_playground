@@ -2,7 +2,6 @@
 #include<ctime>
 #include<iostream>
 #include<boost/asio.hpp>
-#pragma comment(lib, "ws2_32")
 
 int main(int argc, char** argv)
 {

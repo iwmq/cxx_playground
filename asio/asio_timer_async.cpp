@@ -2,7 +2,6 @@
 #include<ctime>
 #include<iostream>
 #include<boost/asio.hpp>
-#pragma comment(lib, "ws2_32")
 
 void timer_cb(const boost::system::error_code& /*e*/)
 {
