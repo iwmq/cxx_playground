@@ -5,4 +5,5 @@ endif()
 
 add_executable(asio_timer_sync asio_timer_sync.cpp)
 add_executable(asio_timer_async asio_timer_async.cpp)
-add_executable(asio_timer_binding_function asio_timer_binding_function.cpp)
+add_executable(asio_timer_function asio_timer_function.cpp)
+add_executable(asio_timer_member_function asio_timer_member_function.cpp)
