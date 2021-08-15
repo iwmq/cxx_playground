@@ -7,9 +7,12 @@ How to install?
 
 Build Boost On Windows
 --------
-1. Download Boost, and extract it to a directory (in this case, `C:\Apps\boost\boost_1_76_0`)
+1. Download Boost, and extract it to a directory (in this case, `C:\Apps\boost\boost_1_77_0`)
 2. Build Boost's build tool `b2`: `cd tools\build`, then `bootstrap.bat gcc`
 3. Build Boost itself: In boost's root directory, run `tools\build\b2.exe install toolset=gcc --prefix=c:\apps\boost\devel`
+
+On my laptop with Intel Core i5-10210U CPU and 12 GiB 2400MHz RAM, the second step takes about 50 seconds,
+and the third step takes about 23.5 minutes.
 
 How to use?
 ---
