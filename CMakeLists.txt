@@ -70,3 +70,4 @@ target_compile_options(vector_demo PRIVATE
 # endif()
 
 add_subdirectory(asio)
+add_subdirectory(eigen)
