@@ -1,6 +1,7 @@
 # This is needed if using MinGW on Windows
 if(MINGW)
   link_libraries(ws2_32)
+  link_libraries(wsock32)
 endif()
 
 add_executable(asio_timer_sync asio_timer_sync.cpp)
@@ -10,3 +11,4 @@ add_executable(asio_timer_member_function asio_timer_member_function.cpp)
 add_executable(asio_timer_concurrent asio_timer_concurrent.cpp)
 add_executable(asio_daytime_client asio_daytime_client.cpp)
 add_executable(asio_daytime_synchronous_server asio_daytime_synchronous_server.cpp)
+add_executable(asio_daytime_asynchronous_server asio_daytime_asynchronous_server.cpp)
