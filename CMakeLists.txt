@@ -72,3 +72,4 @@ target_compile_options(vector_demo PRIVATE
 add_subdirectory(asio)
 add_subdirectory(spirit)
 add_subdirectory(eigen)
+add_subdirectory(json)
