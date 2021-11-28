@@ -34,6 +34,7 @@ include_directories(
 # include_directories(include)
 
 add_executable(greet src/greet.cpp)
+add_executable(variadic src/variadic.cpp)
 
 add_executable(vector_demo src/vector_demo.cpp)
 add_executable(map_demo src/map_demo.cpp)
