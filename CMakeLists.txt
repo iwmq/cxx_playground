@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.10)
 
 project(cxx_demo)
 
@@ -16,7 +16,7 @@ if(WIN32)
     set(BOOST_LIBRARYDIR "c:/apps/boost/devel/lib")
     set(BOOST_INCLUDEDIR "c:/apps/boost/devel/include")
 endif()
-find_package(Boost 1.76.0 REQUIRED)
+find_package(Boost 1.77.0 REQUIRED)
 if(Boost_FOUND)
     set(Boost_USE_STATIC_LIBS OFF)
     set(Boost_USE_MULTITHREADED ON)
@@ -27,6 +27,19 @@ if(Boost_FOUND)
 endif()
 # END: Setup Boost
 
+# Setup fmtlib
+if(WIN32)
+    set(fmt_DIR "c:/dev/fmt/fmt-8.0.1/build")
+    set(fmt_LIBRARYDIR "c:/dev/fmt/devel/lib")
+    set(fmt_INCLUDEDIR "c:/dev/fmt/devel/include")
+endif()
+find_package(fmt 8.0.1 NO_MODULE REQUIRED)
+if(fmt_FOUND)
+    message("Find fmt in " ${fmt_INCLUDEDIR})
+    cmake_print_variables(fmt_INCLUDEDIR)
+endif()
+# END: Setup fmtlib
+
 include_directories(
     ${Boost_INCLUDE_DIRS}
     include()
@@ -36,9 +49,16 @@ include_directories(
 add_executable(greet src/greet.cpp)
 add_executable(variadic src/variadic.cpp)
 
+add_executable(fmt_demo src/fmt_demo.cpp)
+target_include_directories(fmt_demo
+    PRIVATE ${fmt_INCLUDEDIR}
+)
+target_link_libraries(fmt_demo PRIVATE fmt::fmt)
+
 add_executable(vector_demo src/vector_demo.cpp)
 add_executable(map_demo src/map_demo.cpp)
 add_executable(vector_if_demo src/vector_if_demo.cpp)
+add_executable(ranges_demo src/ranges_demo.cpp)
 
 add_executable(boost_bind_demo src/boost_bind_demo.cpp)
 add_executable(std_bind_demo src/std_bind_demo.cpp)
