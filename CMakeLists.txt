@@ -12,18 +12,18 @@ include(CMakePrintHelpers)
 
 # Setup Boost
 if(WIN32)
-    set(BOOST_ROOT "c:/apps/boost/devel")
-    set(BOOST_LIBRARYDIR "c:/apps/boost/devel/lib")
-    set(BOOST_INCLUDEDIR "c:/apps/boost/devel/include")
+    set(BOOST_ROOT "c:/dev/boost/devel")
+    set(BOOST_LIBRARY_DIR "c:/dev/boost/devel/lib")
+    set(BOOST_INCLUDE_DIR "c:/dev/boost/devel/include")
 endif()
-find_package(Boost 1.77.0 REQUIRED)
+find_package(Boost 1.78.0 REQUIRED)
 if(Boost_FOUND)
     set(Boost_USE_STATIC_LIBS OFF)
     set(Boost_USE_MULTITHREADED ON)
     set(Boost_USE_STATIC_RUNTIME OFF)
 
     message("Find Boost in " ${BOOST_INCLUDEDIR})
-    cmake_print_variables(BOOST_INCLUDEDIR)
+    cmake_print_variables(BOOST_INCLUDE_DIR)
 endif()
 # END: Setup Boost
 
