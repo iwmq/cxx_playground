@@ -1,6 +1,6 @@
 # Setup JSON for modern c++
 if(WIN32)
-    set(JSON_INCLUDE_DIR "C:/Apps/json_for_modern_cxx/include")
+    set(JSON_INCLUDE_DIR "C:/dev/json_for_modern_cxx/include")
 endif()
 
 
